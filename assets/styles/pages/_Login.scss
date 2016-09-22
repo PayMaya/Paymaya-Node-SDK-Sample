@@ -1,0 +1,14 @@
+#login {
+  height: 389px;
+  @include border-radius(4px 0 0 4px);
+  width: 33.5%;
+  max-width: none;
+
+  .title {
+    margin-bottom: 25px;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 21px;
+    color: $tx-normal;
+  }
+}

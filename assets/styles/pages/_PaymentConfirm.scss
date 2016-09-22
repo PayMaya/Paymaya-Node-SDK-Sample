@@ -1,0 +1,207 @@
+#paymentConfirm, #paymentConfirm2, #paymentFail, #errorTemplate {
+  .title {
+    text-align: center;
+    color: $tx-bluegray;
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 500;
+
+    &::before {
+      content: " ";
+      width: 60px;
+      height: 60px;
+      background: url(#{$imgUrl}/success.svg) no-repeat center center;
+      background-size: contain;
+      display: block;
+      clear: both;
+      @include centered();
+      margin: 30px auto 10px auto;
+    }
+  }
+
+  .titlePlain {
+    text-align: center;
+    color: $tx-bluegray;
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 500;
+    margin-top: 30px;
+  }
+
+  .title2 {
+    text-align: center;
+    color: $tx-light;
+    margin-top: 50px;
+
+    &:before {
+      content: " ";
+      width: 77px;
+      height: 17px;
+      background: url(#{$imgUrl}/payMayaLogo.svg) no-repeat center center;
+      display: inline-block;
+      vertical-align: middle;
+      background-size: contain;
+      margin-right: 5px;
+    }
+  }
+
+  .infoTable {
+    width: 270px;
+    height: 125px;
+    display: block;
+    @include centered();
+    padding: 0;
+    margin-top: 10px;
+    border-top: 1px solid $br-darkgray;
+
+    .label, .value {
+      border-bottom: 1px solid $br-gray0;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+      height: 40px;
+      float: left;
+      padding: 10px 0 0 0;
+
+      &:after {
+        @include clear();
+      }
+    }
+
+    .label {
+      width: 95px;
+      border-right: 1px solid $br-gray0;
+
+      &.full {
+        width: 100%;
+        border-right: 0 none transparent;
+      }
+    }
+
+    .value {
+      width: 175px;
+      padding-left: 20px;
+    }
+
+
+    &:after {
+      @include clear();
+    }
+
+  }
+
+  .total {
+    width: 270px;
+    display: block;
+    @include centered();
+
+    & > .label {
+      margin-top: 30px;
+      color: $tx-light;
+      font-weight: 400;
+    }
+
+    & >.value {
+      color: $tx-normal;
+      font-size: 18px;
+      line-height: 32px;
+      font-weight: 300;
+    }
+  }
+
+  .extend{
+    border-bottom: 1px solid $br-gray0;
+    width: 270px;
+    @include centered();
+    cursor: pointer;
+    min-height: 22px;border-bottom: 0 none transparent;
+
+    .expandDown {
+      background: url(#{$imgUrl}/open.svg) no-repeat center center;
+      margin-top: 0;
+      margin-bottom: 20px;
+      content: " ";
+      width: 12px;
+      height: 12px;
+      @include centered();
+      display: block;
+      position: relative;
+    }
+  }
+
+  .card {
+    width: 270px;
+    @include centered();
+    text-align: left;
+    padding: 0 20px 20px 20px;
+    @include border-radius(4px);
+    margin-top: 10px;
+    display: block;
+
+    .label {
+      width: 49%;
+      display: inline-block;
+    }
+    .value {
+      width: 49%;
+      display: inline-block;
+      vertical-align: text-top;
+      font-weight: 300;
+      word-wrap: break-word;
+    }
+
+  }
+
+  .cardType {
+    content: " ";
+    width: 32px;
+    height: 20px;
+    background: url(#{$imgUrl}/cards.svg) no-repeat 34px center;
+    display: inline-block;
+    border: 1px solid $br-gray0;
+    @include border-radius(4px);
+    margin-left: 10px;
+    vertical-align: middle;
+
+    &.mc {
+      background-position: -34px 0;
+    }
+
+    &.visa {
+      background-position: -69px center;
+    }
+
+    &.jcb {
+      background-position: -101px center;
+    }
+
+    &.smartmoney {
+      background-position: 0 center;
+    }
+  }
+
+}
+
+#paymentConfirm2, #paymentFail {
+  .infoTable {
+    height: 160px;
+  }
+}
+
+#paymentFail, #errorTemplate {
+  .title {
+    color: $tx-error;
+
+    &::before {
+      content: " ";
+      width: 60px;
+      height: 60px;
+      background: url(#{$imgUrl}/fail.svg) no-repeat center center;
+      background-size: contain;
+      display: block;
+      clear: both;
+      @include centered();
+      margin: 30px auto 10px auto;
+    }
+  }
+}

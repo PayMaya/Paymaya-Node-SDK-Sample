@@ -1,0 +1,407 @@
+$debugVisible: none;
+
+#container {
+  position: relative;
+  background-color: $bg-main;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: $tx-normal;
+  line-height: 18px;
+  -webkit-font-smoothing: antialiased;
+  float: left;
+  width: 100%;
+  overflow-x: hidden;
+  @include centered-block();
+  min-height: 100%;
+
+  &:after {
+    @include clear();
+  }
+
+  @import "header";
+
+  // Generic CSS Main Body
+  #main {
+    max-width: 1000px;
+    width: 100%;
+    min-height: calc(100vh - 170px); //less: header height (50px) & margin (20px)
+                                     //    : footer height (100px)
+    height: 100%;
+    display: block;
+    @include centered();
+
+    &:after {
+      @include clear();
+    }
+
+    .expandDown {
+      background: url(#{$imgUrl}/open.svg) no-repeat center center;
+      top: 20px;
+      content: " ";
+      width: 12px;
+      height: 12px;
+      display: none;
+      position: absolute;
+      cursor: pointer;
+
+      &.rotate {
+        @include rotate("180deg");
+      }
+    }
+
+    .section {
+      background-color: $bg-white;
+      border: 1px solid $br-gray;
+      @include border-radius(4px);
+      max-width: calc(33% - 13.34px);
+      width: 100%;
+      text-align: left;
+      float: left;
+      padding: 20px;
+      margin-bottom: 10px;
+      position: relative;
+      display: $debugVisible;
+
+      &:after {
+        @include clear();
+      }
+
+      .title {
+        font-weight: 300;
+        font-size: 18px;
+        color: $tx-light;
+        line-height: 22px;
+      }
+
+      #payMayaLogo, .payMayaLogo {
+        background: url(#{$imgUrl}/payMayaLogo.svg) no-repeat center center;
+        background-size: contain;
+        width: 100px;
+        height: 22px;
+      }
+
+      .label {
+        color: $tx-normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 21px;
+        margin-bottom: 5px;
+        margin-top: 20px;
+      }
+
+      .row {
+        width: 100%;
+        clear: both;
+
+        .label {
+          display: inline-block;
+          min-width: 81px;
+        }
+
+        .value {
+          display: inline-block;
+          margin-left: 5px;
+        }
+
+        &:after {
+          @include clear();
+        }
+      }
+
+      .input {
+        display: inline-block;
+
+        &.select {
+          width: 200px;
+          overflow: hidden;
+          @include border-radius(4px);
+          vertical-align: middle;
+          position: relative;
+
+          &:after {
+            content: "\25bc";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 31px;
+            height: 38px;
+            display: block;
+            vertical-align: middle;
+            text-align: center;
+            padding-top: 12px;
+            background-color: $bg-gray2;
+            @include border-radius(4px);
+            pointer-events: none;
+            font-size: 12px;
+            color: $tx-light;
+          }
+        }
+      }
+
+      .link {
+        color: $tx-link;
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 18px;
+        text-decoration: none;
+      }
+
+      .boldlink {
+        color: $tx-link;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 18px;
+        text-decoration: none;
+      }
+
+      .footnote {
+        font-weight: 300;
+        width: 300px;
+      }
+
+      .error {
+        color: $tx-error;
+        font-weight: 500;
+        display: none;
+      }
+
+      .errorfield {
+        border: 1px solid $tx-error !important;
+      }
+
+      input[type=text], input[type=password] {
+        height: 38px;
+        width: 100%;
+        border: 1px solid #{$br-gray0};
+        @include border-radius(4px);
+        padding: 0 10px;
+        max-width: 300px;
+      }
+
+      input[type=submit], input[type=button] {
+        background-color: $bg-button;
+        @include border-radius(4px);
+        height: 38px;
+        width: 100%;
+        max-width: 300px;
+        border: 0;
+        color: $tx-white;
+        font-weight: 300;
+        font-size: 13px;
+        margin-top: 20px;
+      }
+
+      .backButton {
+        width:30px;
+        height: 20px;
+        background: url(#{$imgUrl}/back.svg) no-repeat center center;
+        background-size: contain;
+        display: inline-block;
+        cursor: pointer;
+        vertical-align: middle;
+        margin-right: 5px;
+
+        & + .title {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+
+      .cardLabel {
+        font-weight: 300;
+        vertical-align: middle;
+        margin-top: 5px;
+
+        &.noSupport:after {
+          content: " Card type not supported";
+          font-weight: 400;
+          color: #D55B69;
+        }
+
+        #paymentLogos {
+          margin-left: 15px;
+          background-size: auto;
+          width: 32px;
+        }
+
+        #paymentLogos2, #paymentLogos3 {
+          margin-left: 5px;
+          background-size: auto;
+          width: 32px;
+        }
+      }
+
+      #paymentLogos, #paymentLogos2, #paymentLogos3 {
+        background: url(#{$imgUrl}/cards.svg) no-repeat 34px 0;
+        background-size: contain;
+        width: 100px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: middle;
+
+        &.mc {
+          background-position: -34px 0;
+        }
+
+        &.visa {
+          background-position: -68px 0;
+        }
+
+        &.jcb {
+          background-position: -101px 0;
+        }
+
+        &.smartmoney {
+          background-position: 0 0
+        }
+      }
+
+      select {
+        background-color: $bg-gray2;
+        height: 38px;
+        width: 220px;
+        border: 0;
+      }
+
+      &.big {
+        max-width:67.3%;
+      }
+
+      &.solo {
+        max-width: calc(100% - 40px);
+        @include centered();
+        clear: both;
+      }
+
+      .cardIcon {
+        background: url(#{$imgUrl}/cardIcon.svg) no-repeat center center;
+        width: 42px;
+        height: 42px;
+      }
+
+      .complexMobile {
+        position: relative;
+        width: 100%;
+
+        #countryCodeContainer {
+          position: absolute;
+          top: 0;
+          left: 0;
+          border: 1px solid $br-gray0;
+          display: block;
+          width: 70px;
+          height: 38px;
+          overflow: hidden;
+          z-index: 1;
+          background: $bg-white;
+          @include border-radius(4px 0 0 4px);
+
+          &:after {
+            content: "\25bc";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 31px;
+            height: 38px;
+            display: block;
+            vertical-align: middle;
+            text-align: center;
+            padding-top: 12px;
+            pointer-events: none;
+            font-size: 12px;
+            color: $tx-light;
+            z-index: 3;
+          }
+
+          #countryCode {
+            position: absolute;
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 80px;
+            z-index: 0;
+            padding-left: 10px;
+            background: none transparent;
+            border: 0 none transparent;
+          }
+
+          #countryCodeText {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 70px;
+              z-index: 2;
+              border: 0 none transparent;
+              pointer-events: none;
+              @include border-radius(4px 0 0 4px);
+          }
+        }
+
+        #phoneNumber {
+          width: 100%;
+          max-width: 292px;
+          padding-left: 80px;
+          position: relative;
+        }
+      }
+    }
+
+    // Specific Sections
+    @import "../pages/OrderSummary";
+    @import "../pages/Login";
+    @import "../pages/NoAccount";
+    @import "../pages/PayCreditCard";
+    @import "../pages/PaymentConfirm";
+
+    #redirect.section.solo {
+      border: 0 none transparent;
+      background: none transparent;
+      text-align: center;
+    }
+
+    #createAccount {
+      border: 1px solid $br-gray;
+      background: none transparent;
+      text-align: center;
+      margin: 10px auto;
+
+      .title {
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 21px;
+        color: $tx-normal;
+      }
+
+      .link {
+        font-weight: 500;
+      }
+    }
+
+  }
+
+  // Footer CSS
+  @import "footer";
+}
+
+// @media only screen and (min-width:481px) and (max-width:939px) {
+@media only screen and (min-width:481px) {
+  @import "tablet";
+}
+
+@media only screen and (max-width:480px) {
+  @import "mobile";
+}
+
+// Override for error pages
+
+div#container.errorTemplate #main div.section {
+  display: block;
+}
+
+.render3d {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}

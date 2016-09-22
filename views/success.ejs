@@ -1,0 +1,43 @@
+<div class="row itemHeader">
+  <div class="col-lg-12">
+    <div class="pull-left">
+      <h1 class="text-success">Success!</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <p><big>Your purchase is successful! Thanks for shopping!</big></p>
+    <p>Here are your orders:</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <table class="table table-default">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Amount</th>
+          <th>Total Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0; i<items.length; i++) { %>
+        <tr>
+          <td><%= items[i].name %></td>
+          <td><%= items[i].quantity %></td>
+          <td><%= items[i].amount.value %></td>
+          <td><%= items[i].totalAmount.value %></td>
+        </tr>
+        <% } %>
+        <tr>
+          <td colspan="3"></td>
+          <td><%= totalAmount.currency %> <%= totalAmount.value %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

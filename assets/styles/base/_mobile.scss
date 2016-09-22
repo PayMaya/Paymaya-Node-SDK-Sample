@@ -1,0 +1,134 @@
+#container {
+  line-height: 28px;
+
+  #header {
+    min-height: 0;
+    #logo {
+      @include centered-block();
+      height: auto;
+    }
+    #close {
+      display: block;
+      background: url(#{$imgUrl}/close.svg) no-repeat center center;
+      content: " ";
+      width: 11px;
+      height: 11px;
+      position: absolute;
+      top: 27px;
+      right: 27px;
+      cursor: pointer;
+    }
+  }
+  #main {
+    .section {
+      @include centered-block();
+      padding:10px;
+      display: $debugVisible;
+
+      &.big {
+        vertical-align: top;
+        position: relative;
+        width: calc(100% - 15px);
+        max-width: none;
+        margin-right: 20px;
+        padding:10px;
+        @include centered-block();
+        display: $debugVisible;
+
+      }
+
+      &.solo {
+        clear: both;
+        width: calc(100% - 15px);
+        max-width: none;
+        @include centered-block();
+        display: $debugVisible;
+        padding:10px;
+      }
+
+      .footnote {
+      }
+    }
+
+    #orderSummary {
+      margin-left: 20px;
+      width: calc(100% - 15px);
+      max-width: none;
+      position: relative;
+      @include centered-block();
+      display: $debugVisible;
+
+      .title.top {
+        margin-bottom: 0;
+      }
+
+
+      .heading, .item {
+        display: none;
+      }
+
+      .expandDown {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        margin-top: 10px;
+      }
+    }
+
+    #noAccount, #login {
+      vertical-align: top;
+      position: relative;
+      width: calc(100% - 15px);
+      max-width: none;
+      margin-right: 20px;
+      border: 1px solid $br-gray;
+
+      @include centered-block();
+      display: $debugVisible;
+    }
+
+    #noAccount {
+      clear: right;
+      min-height: 0;
+      max-height: none;
+      height: auto;
+      border-top: 0 none transparent;
+      @include border-radius(0 0 4px 4px);
+
+      @include centered-block();
+      display: $debugVisible;
+    }
+
+    #login {
+      margin-bottom: 0;
+      @include border-radius(4px 4px 0 0);
+    }
+
+    .input {
+      width: 100%;
+
+      &.select, &.complexMobile {
+        &:after {
+          padding-top: 6px !important;
+        }
+      }
+    }
+
+    input[type=text], input[type=password] {
+      max-width: none;
+    }
+  }
+
+  #footer{
+    #copyright-section{
+      width: 270px;
+      line-height: 110%;
+            
+      #paymayaBiz{
+        width: 152px;
+        height: 20px;
+      }
+    }
+  }
+}

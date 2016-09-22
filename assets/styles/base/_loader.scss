@@ -1,0 +1,68 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left:0;
+  right:0;
+  background: rgba(255,255,255,.3);
+  //background: #F9F9F9;
+  z-index: 99999;
+  display:block;
+
+  .loader {
+    width: 3em;
+    height: 3em;
+    z-index: 3;
+    border: .25em solid #9598A2;
+    border-bottom: 3px solid #E9E9E9;
+    @include border-radius(100%);
+    margin: auto;
+    left:0;
+    right: 0;
+    top: 30%;
+    position: absolute;
+    -webkit-animation: revolve 1s infinite linear;
+    -moz-animation: revolve 1s infinite linear;
+    -o-animation: revolve 1s infinite linear;
+    animation: revolve 1s infinite linear;
+    z-index: 999999;
+  }
+
+  .msg {
+    text-shadow: 0 0 3px #FFF;
+    margin: auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    display: block;
+    width: 90%;
+    text-align: center;
+    top: 45%;
+    font-weight: 500;
+    font-size: 13px;
+
+    &:after {
+      display: block;
+      content: " ";
+      background: #fff;
+      position: absolute;
+      width: 90%;
+      max-width: 320px;
+      height: 320px;
+      top: -200px;
+      z-index: -1;
+      @include centered;
+      @include border-radius(4px);
+      border: 1px solid rgba(226, 226, 226, .3);
+
+      -webkit-box-shadow: 0 0 5px 5px rgba(226, 226, 226, .3);
+      box-shadow: 0 0 5px 5px rgba(226, 226, 226, .3);
+    }
+  }
+}
+
+
+@-webkit-keyframes revolve { to { -webkit-transform: rotate(360deg); } }
+@-moz-keyframes revolve { to { -moz-transform: rotate(360deg); } }
+@-o-keyframes revolve { to { -o-transform: rotate(360deg); } }
+@keyframes revolve { to { transform: rotate(360deg); } }

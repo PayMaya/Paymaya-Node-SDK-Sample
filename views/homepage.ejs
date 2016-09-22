@@ -1,0 +1,113 @@
+<!-- Title -->
+<div class="row itemHeader">
+  <div class="col-lg-12">
+    <div class="pull-left">
+      <h3>Latest Features</h3>
+    </div>
+    <div class="pull-right">
+      <a class="btn btn-primary addItem" data-toggle="modal" data-target="#addItemModal">Add Item</a>
+    </div>
+  </div>
+</div>
+<!-- /.row -->
+
+<!-- Page Features -->
+<div class="row text-center" id="itemList">
+
+  <div class="col-md-3 col-sm-6 hero-feature">
+    <div class="thumbnail">
+      <img class="icon" src="/images/storefront/nike-airmax.jpg" alt="">
+      <div class="caption">
+        <h3 class="truncate">Nike Air Max Zero</h3>
+        <p><span class="price">8164.00</span></p>
+        <p>
+          <a href="#" class="btn btn-default minus">-</a> <input type="text" class="qty form-control" value="0" readonly/> <a href="#" class="btn btn-default add">+</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-6 hero-feature">
+    <div class="thumbnail">
+      <img class="icon" src="/images/storefront/angeline-flats.jpg" alt="">
+      <div class="caption">
+        <h3 class="truncate">Angeline Flats</h3>
+        <p><span class="price">525.00</span></p>
+        <p>
+          <a href="#" class="btn btn-default minus">-</a> <input type="text" class="qty form-control" value="0" readonly/> <a href="#" class="btn btn-default add">+</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-6 hero-feature">
+    <div class="thumbnail">
+      <img class="icon" src="/images/storefront/sperry-shoes.jpg" alt="">
+      <div class="caption">
+        <h3 class="truncate">Sperry Top-Sider Boat Shoes</h3>
+        <p><span class="price">4884.00</span></p>
+        <p>
+          <a href="#" class="btn btn-default minus">-</a> <input type="text" class="qty form-control" value="0" readonly/> <a href="#" class="btn btn-default add">+</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-sm-6 hero-feature">
+    <div class="thumbnail">
+      <img class="icon" src="/images/storefront/babolat-shoes.jpg" alt="">
+      <div class="caption">
+        <h3 class="truncate">Babolat Badminton Shoes</h3>
+        <p><span class="price">4500.00</span></p>
+        <p>
+          <a href="#" class="btn btn-default minus">-</a> <input type="text" class="qty form-control" value="0" readonly/> <a href="#" class="btn btn-default add">+</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- /.row -->
+<div class="row" style="text-align: center;">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Customer Information</h3>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-12">
+          <div class="col-md-5">
+            First Name
+          </div>
+          <div class="col-md-7">
+            <input type="text" class="form-control" id="firstName" value="<%= buyer.firstName %>" />
+          </div>
+        </div>
+        <br>
+        <div class="col-md-12">
+          <div class="col-md-5">
+            Last Name
+          </div>
+          <div class="col-md-7">
+            <input type="text" class="form-control" id="lastName" value="<%= buyer.lastName %>"/>
+          </div>
+        </div>
+        <br>
+        <div class="col-md-12">
+          <div class="col-md-5">
+            Email (optional)
+          </div>
+          <div class="col-md-7">
+            <input type="text" class="form-control" id="email" value="<%= buyer.email %>"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <h3>Total Amount: <span id="total"></span></h3><br>
+    <a href="#" class="btn btn-lg btn-success" id="checkout">Checkout with <img src="/images/payMayaLogo.png" style="height: 20px;"/></a>
+  </div>
+</div>
+
+<hr>

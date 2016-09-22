@@ -1,0 +1,91 @@
+#container {
+  #header {
+    #logo {
+      @include centered-block();
+    }
+  }
+  #main {
+    .section {
+      @include centered-block();
+      display: $debugVisible;
+
+      &.big {
+        display: $debugVisible;
+        vertical-align: top;
+        position: relative;
+        width: calc(50% - 20px);
+        max-width: none;
+        margin-right: 20px;
+        float: right;
+        clear: right;
+      }
+
+      &.solo {
+        clear: both;
+        max-width: none;
+        padding: 20px;
+        width: 400px;
+      }
+
+      .input {
+        width: 100%;
+      }
+
+      input[type=text], input[type=password] {
+        max-width: 300px;
+      }
+    }
+
+    #orderSummary {
+      float: left;
+      margin-left: 20px;
+      width: calc(50% - 30px);
+      max-width: none;
+      //min-height: 541px; //Same height as login card
+      min-height: 329px; //Same height as pay-with-credit-card card
+      position: relative;
+
+      .title.top {
+        margin-bottom: 0px;
+      }
+
+      .heading, .item {
+        display: none;
+      }
+
+      .expandDown {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        margin-top: 20px;
+      }
+    }
+
+    #noAccount, #login {
+      display: $debugVisible;
+      vertical-align: top;
+      position: relative;
+      width: calc(50% - 20px);
+      max-width: none;
+      margin-right: 20px;
+      float: right;
+      border: 1px solid $br-gray;
+    }
+
+    #noAccount {
+      clear: right;
+      min-height: 0;
+      max-height: none;
+      height: auto;
+      border-top: 0 none transparent;
+      @include border-radius(0 0 4px 4px);
+    }
+
+    #login {
+      margin-bottom: 0;
+      @include border-radius(4px 4px 0 0);
+    }
+
+  }
+}

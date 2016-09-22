@@ -1,0 +1,49 @@
+<div class="row itemHeader">
+  <div class="col-lg-12">
+    <div class="pull-left">
+      <h1>Orders</h1>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <% for(var i=0; i<orders.length; i++) { %>
+    <% var order = orders[i]; %>
+    <div class="panel panel-<%= (order.status === 'success') ? 'success': ((order.status === 'failed') ? 'danger' : 'default') %>">
+      <div class="panel-heading">
+        <div class="panel-title">Checkout ID: <%= order.checkoutId %></div>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-12">
+          <p>Buyer: <%= order.buyer.firstName %> <%= order.buyer.lastName %></p>
+          <p>Total Amount: <%= order.totalAmount.currency %> <%= order.totalAmount.value %></p>
+          <p>Status: <%= order.status %></p>
+        </div>
+        <div class="col-md-12">
+          <p><strong>Ordered Items:</strong></p>
+          <table class="table table-default">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+                <th>Total Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% var items = order.items; %>
+              <% for(var j=0; j<items.length; j++) { %>
+              <tr>
+                <td><%= items[j].name %></td>
+                <td><%= items[j].quantity %></td>
+                <td><%= items[j].amount.value %></td>
+                <td><%= items[j].totalAmount.value %></td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  <% } %>
+</div>

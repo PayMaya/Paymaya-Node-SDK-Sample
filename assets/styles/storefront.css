@@ -1,0 +1,35 @@
+.icon {
+  max-height: 130px;
+}
+
+.qty {
+  width: 40px;
+  text-align: center;
+  display: inline;
+}
+
+.navbar-inverse {
+  background-color: #EEEEEE;
+  border-color: #EEEEEE;
+  height: 70px;
+}
+
+.truncate {
+  height: 50px;
+  overflow-y: hidden;
+  margin: 0
+}
+
+.itemHeader {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.addItem {
+  margin-top: 10px;
+}
+
+.modal-body {
+  padding: 7px;
+}
+

@@ -1,0 +1,170 @@
+#payCreditCard {
+  .input.select {
+    width: 82px;
+
+    select {
+      width: 102px;
+    }
+  }
+
+  .backButton {
+    display: none;
+  }
+
+  #expirationDate, #security {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  #security {
+    position: relative;
+    .label {
+      .info {
+        content: " ";
+        width: 18px;
+        height: 18px;
+        background: url(#{$imgUrl}/infoIcon.svg) no-repeat center center;
+        background-size: contain;margin-left: 10px;
+        display: inline-block;
+        vertical-align: text-bottom;
+        position: absolute;
+        right: -23px;
+        top: 21px;
+        text-indent: -100%;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .cvc {
+        width: 460px;
+        height: 318px;
+        background: url(#{$imgUrl}/CVV.svg) no-repeat center center;
+        position: absolute;
+        top: -217px;
+        right: -152px;
+        display: none;
+      }
+    }
+  }
+
+  #cvc {
+    width: 80px;
+  }
+}
+
+#payCreditCard2 {
+  #fullName, #presentAddress {
+    input[type=text] {
+      width: 100%;
+      max-width: 292px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .input {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  div#country {
+    width: 100%;
+
+    .input {
+      width: 100%;
+      display: block;
+      max-width: 292px;
+    }
+
+    div#countryContainer {
+      select#country {
+        width: 100%;
+        max-width: 292px;
+        display: block;
+      }
+    }
+  }
+
+  #city, #zip {
+    max-width: 140px;
+    display: inline-block;
+    vertical-align: top;
+
+    * {
+      max-width: 140px;
+    }
+  }
+
+  div#zip {
+    margin-left: 5px;
+  }
+}
+
+#payCreditCard3 {
+  .title {
+    width: calc(100% - 50px);
+    &:after {
+      display: block;
+      @include clear();
+    }
+  }
+  .label {
+    width: 49%;
+    display: inline-block;
+  }
+  .value {
+    width: 49%;
+    display: inline-block;
+    vertical-align: text-top;
+    font-weight: 300;
+    word-wrap: break-word;
+  }
+
+  .card1, .card2 {
+    border: 1px solid $br-gray0;
+    max-width: 300px;
+    padding: 0 20px 20px 20px;
+  }
+
+  .card2 {
+    @include border-radius(0 0 4px 4px);
+  }
+
+  .card1 {
+    @include border-radius(4px 4px 0 0);
+    border-bottom: 0 none transparent;
+
+    .label, .value {
+      display: block;
+      width: 100%;
+
+      #cardType {
+        content: " ";
+        width: 32px;
+        height: 20px;
+        background: url(#{$imgUrl}/cards.svg) no-repeat 34px center;
+        display: inline-block;
+        border: 1px solid $br-gray0;
+        @include border-radius(4px);
+        margin-left: 10px;
+        vertical-align: middle;
+
+        &.mc {
+          background-position: -34px 0;
+        }
+
+        &.visa {
+          background-position: -69px center;
+        }
+
+        &.jcb {
+          background-position: -101px center;
+        }
+
+        &.smartmoney {
+          background-position: 0 center;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+#noAccount {
+  background-color: $bg-gray;
+  min-height: 389px;
+  @include border-radius(0 4px 4px 0);
+  border-left: 0 transparent none;
+  width: 33.5%;
+  max-width: none;
+
+  .cardIcon {
+    display: block;
+    float: right;
+
+    &:after {
+      @include clear();
+    }
+  }
+}
